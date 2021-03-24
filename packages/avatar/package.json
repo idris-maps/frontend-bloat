@@ -4,7 +4,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc && cpx \"src/**/*\" dist"
+    "build": "tsc && cpx \"src/**/*\" dist",
+    "test": "jest --config jest.config.js"
   },
   "peerDependencies": {
     "@types/react": "^17.0.3",
