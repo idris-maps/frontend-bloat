@@ -1,6 +1,6 @@
 {
 	"name": "@react-components-attempt/styles",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"main": "main.scss",
 	"dependencies": {
 		"@yoo-digital/sassquatch": "^0.4.1",
