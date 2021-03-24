@@ -16,5 +16,8 @@
     "@react-components-attempt/types": "^0.0.1",
     "@types/classnames": "^2.2.11",
     "classnames": "^2.2.6"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
