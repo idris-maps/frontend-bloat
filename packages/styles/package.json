@@ -1,12 +1,12 @@
 {
 	"name": "@react-components-attempt/styles",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"main": "main.scss",
 	"dependencies": {
 		"@yoo-digital/sassquatch": "^0.4.1",
 		"normalize.css": "^8.0.1"
 	},
-  "publishConfig": {
-    "access": "public"
-  }
+	"publishConfig": {
+		"access": "public"
+	}
 }
