@@ -1,5 +1,5 @@
 @import "variables";
-@import "../node_modules/@yoo-digital/sassquatch/scss/abstracts/functions";
+@import "@yoo-digital/sassquatch/scss/abstracts/functions";
 
 @function button-theme-color($key: "primary", $variant: "base") {
   $map: map-get($button-theme-colors, $key);

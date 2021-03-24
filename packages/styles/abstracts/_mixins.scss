@@ -1,5 +1,5 @@
 @import "variables";
-@import "../node_modules/@yoo-digital/sassquatch/scss/abstracts/mixins";
+@import "@yoo-digital/sassquatch/scss/abstracts/mixins";
 
 /// Applies the style definitions to the elements that are not the first and last elements
 /// If there are four elements, then the styles will be applied to the second and third elements.
