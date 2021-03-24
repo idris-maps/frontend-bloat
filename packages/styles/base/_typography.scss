@@ -1,0 +1,98 @@
+@import "../abstracts/variables";
+@import "fonts";
+
+// Common settings for headings (h1, h2, ...)
+@mixin heading {
+  margin-top: $headings-margin-top;
+  margin-bottom: $headings-margin-bottom;
+  color: $headings-color;
+  font-family: $headings-font-family;
+}
+
+body {
+  color: $body-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+}
+
+h1,
+.h1 {
+  @include heading;
+
+  font-size: $h1-font-size;
+  font-weight: $h1-font-weight;
+  line-height: $h1-line-height;
+}
+
+h2,
+.h2 {
+  @include heading;
+
+  font-size: $h2-font-size;
+  font-weight: $h2-font-weight;
+  line-height: $h2-line-height;
+}
+
+h3,
+.h3 {
+  @include heading;
+
+  font-size: $h3-font-size;
+  font-weight: $h3-font-weight;
+  line-height: $h3-line-height;
+}
+
+h4,
+.h4 {
+  @include heading;
+
+  font-size: $h4-font-size;
+  font-weight: $h4-font-weight;
+  line-height: $h4-line-height;
+}
+
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+
+  &:hover {
+    color: $link-color-hover;
+    text-decoration: $link-decoration-hover;
+  }
+}
+
+p,
+.paragraph {
+  margin-top: $paragraph-margin-top;
+  margin-bottom: $paragraph-margin-bottom;
+  font-size: $font-size-base;
+}
+
+.paragraph--xl {
+  font-size: $paragraph-xl-font-size;
+  font-weight: $paragraph-xl-font-weight;
+}
+
+.paragraph--lg {
+  font-size: $font-size-lg;
+}
+
+small,
+.paragraph--sm {
+  font-size: $font-size-sm;
+}
+
+blockquote,
+.paragraph--quote {
+  margin: $blockquote-margin;
+  font-size: $blockquote-font-size;
+  font-style: $blockquote-font-style;
+  font-weight: $blockquote-font-weight;
+}
+
+b,
+strong {
+  font-weight: $font-weight-bold;
+}

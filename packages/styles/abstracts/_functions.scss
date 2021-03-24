@@ -1,0 +1,36 @@
+@import "variables";
+@import "../node_modules/@yoo-digital/sassquatch/scss/abstracts/functions";
+
+@function button-theme-color($key: "primary", $variant: "base") {
+  $map: map-get($button-theme-colors, $key);
+
+  @return map-get($map, $variant);
+}
+
+// Dims the color to the next darker variable in the color system.
+// If the provided key does not exist in the color system, the key
+// will go through the shade function (20%).
+@function dim($key) {
+  @return if(map-has-key($colors-dim, $key), map-get($colors-dim, $key), shade($key, 20%));
+}
+
+// Diminishes the color to the next lighter variable in the color system.
+// If the provided key does not exist in the color system, the key
+// will go through the tint function (60%).
+@function diminish($key) {
+  @return if(map-has-key($colors-diminish, $key), map-get($colors-diminish, $key), tint($key, 60%));
+}
+
+// Lessens the intensity of the color variable according to the color system.
+// dark variables become lighter
+// light variables become darker
+@function lessen($key) {
+  @return if(map-has-key($colors-lessen, $key), map-get($colors-lessen, $key), $key);
+}
+
+// Intensifies the color variable according to the color system.
+// dark variables become darker
+// light variables become lighter
+@function intensify($key) {
+  @return if(map-has-key($colors-intensify, $key), map-get($colors-intensify, $key), $key);
+}

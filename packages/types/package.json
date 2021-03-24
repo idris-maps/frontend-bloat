@@ -1,0 +1,6 @@
+{
+  "name": "@react-components-attempt/types",
+  "version": "0.0.0",
+  "main": "dist/index.d.ts",
+  "types": "dist/index.d.ts"
+}

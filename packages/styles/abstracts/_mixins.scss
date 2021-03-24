@@ -1,0 +1,124 @@
+@import "variables";
+@import "../node_modules/@yoo-digital/sassquatch/scss/abstracts/mixins";
+
+/// Applies the style definitions to the elements that are not the first and last elements
+/// If there are four elements, then the styles will be applied to the second and third elements.
+@mixin middle-elements {
+  &:not(:first-child):not(:last-child) {
+    @content;
+  }
+}
+
+@mixin skeleton-style {
+  background-color: $bizz-grey-95;
+
+  &--animated {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 800px;
+      height: 100%;
+      animation: shimmeringAnimation 2.5s infinite ease-in-out;
+      will-change: transform;
+      background: linear-gradient(90deg, transparent, rgba($bizz-grey-80, 0.5) 50%, transparent);
+    }
+  }
+
+  &--dark {
+    background-color: $bizz-grey-20;
+
+    &::before {
+      background: linear-gradient(90deg, transparent, rgba($bizz-grey-40, 0.5) 50%, transparent);
+    }
+  }
+}
+
+// Used to customize the native scrollbars.
+// This mixin is supported by all major browsers.
+// To support the Internet Explorer properly you will have to use an additional library, such as simplebar-react.
+// macOS note: The auto-hiding semi-transparent scrollbars that are the macOS default cannot
+// be colored with this rule (it still chooses their own contrasting color based on the background).
+// Only the permanently showing scrollbars (System Preferences > Show Scroll Bars > Always) are colored.
+@mixin scrollbar(
+  $thumb-color: $bizz-grey-10,
+  $track-color: $bizz-grey-80,
+  $size: 8px,
+  $border-radius: 20px,
+) {
+  overflow: auto;
+
+  // Firefox
+  scrollbar-color: $thumb-color $track-color;
+  scrollbar-width: thin;
+
+  // IE
+  scrollbar-face-color: $thumb-color;
+  scrollbar-track-color: $track-color;
+
+  // Google Chrome / Safari
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: $border-radius;
+    background-color: $track-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: $border-radius;
+    background-color: $thumb-color;
+  }
+}
+
+// Hide scrollbars but keep functionality
+@mixin hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin contain {
+  @include border-box;
+
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacer;
+  padding-left: $spacer;
+
+  // Constrains the container to a max-width for every
+  // breakpoint
+  @each $breakpoint, $max-width in $max-widths {
+    @include at-least($breakpoint) {
+      max-width: $max-width;
+    }
+  }
+}
+
+@mixin keyboard-focus {
+  &:focus-visible {
+    outline: 1px auto $color-selection;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+@mixin input-focus {
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 1px $color-selection;
+  }
+}

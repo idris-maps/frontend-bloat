@@ -1,0 +1,425 @@
+// ==========================================
+// General Settings
+// ==========================================
+
+// Paths
+// Static path: The directory your static files/assets reside:
+$static-directory-path: "../assets" !default;
+$fonts-path: "#{$static-directory-path}/fonts" !default;
+
+// Override path variables of libraries
+$fa-font-path: "#{$fonts-path}/fontawesome" !default;
+
+// ==========================================
+// Colors
+// ==========================================
+// General
+$white: #ffffff !default;
+$black: #000000 !default;
+
+// Red scale colors
+$bizz-red: #aa332f !default;
+$bizz-red-dark: #882825 !default;
+$bizz-red-light: #b95956 !default;
+
+// Grey scale colors
+// The greys can also be used in tints of 20% increments.
+// Use the provided sass functions tint (lighten) or shade (darken) the greys.
+$bizz-grey-5: #0d0d0d !default;
+$bizz-grey-10: #1a1a1a !default;
+$bizz-grey-20: #333333 !default;
+$bizz-grey-40: #666666 !default;
+$bizz-grey-60: #999999 !default;
+$bizz-grey-80: #cccccc !default;
+$bizz-grey-90: #e5e5e5 !default;
+$bizz-grey-95: #f2f2f2 !default;
+
+// Functional colors
+$bizz-green: #1c7343 !default;
+$color-pdf-red: $bizz-red !default;
+$color-word-blue: #27549b !default;
+$color-video-purple: #733388 !default;
+$color-zip-orange: #ff9100 !default;
+$color-powerpoint-red: #d44519 !default;
+$color-excel-green: $bizz-green !default;
+$color-selection: #396aab !default;
+
+// State colors
+$color-success: #228c52 !default;
+$color-error: #e64540 !default;
+$color-info: $bizz-grey-60 !default;
+$color-disabled: $bizz-grey-95 !default;
+$color-warning: #f7ae1b !default;
+
+// Themes
+$primary: $bizz-red;
+$primary-contrast: $white;
+$secondary: $bizz-grey-40;
+$secondary-contrast: $white;
+$light: $bizz-grey-95;
+$light-contrast: $bizz-grey-20;
+$dark: $bizz-grey-20;
+$dark-contrast: $bizz-grey-95;
+
+// mapping old variables
+// these variables are going to be deprecated.
+$bizz-grey-35: $bizz-grey-40 !default;
+$bizz-grey-50: $bizz-grey-40 !default;
+$bizz-grey-65: $bizz-grey-60 !default;
+$bizz-grey-85: $bizz-grey-90 !default;
+$bizz-orig-grey-4: $bizz-grey-20 !default;
+$bizz-orig-grey-3: $bizz-grey-60 !default;
+$bizz-orig-grey-2: $bizz-grey-90 !default;
+$bizz-orig-grey-1: $bizz-grey-95 !default;
+$bizz-red-yoo: $bizz-red-light !default;
+
+// A map containing all colors
+$color-map: (
+  // General colors
+  "black": $black,
+  "white": $white,
+  // Red scale colors
+  "red": $bizz-red,
+  "red-dark": $bizz-red-dark,
+  "red-light": $bizz-red-light,
+  // Grey scale colors
+  "grey-5": $bizz-grey-5,
+  "grey-10": $bizz-grey-10,
+  "grey-20": $bizz-grey-20,
+  "grey-40": $bizz-grey-40,
+  "grey-60": $bizz-grey-60,
+  "grey-80": $bizz-grey-80,
+  "grey-90": $bizz-grey-90,
+  "grey-95": $bizz-grey-95,
+  // Functional colors
+  "pdf": $color-pdf-red,
+  "word": $color-word-blue,
+  "video": $color-video-purple,
+  "zip": $color-zip-orange,
+  "powerpoint": $color-powerpoint-red,
+  "excel": $color-excel-green,
+  "selection": $color-selection,
+  // State colors
+  "success": $color-success,
+  "error": $color-error,
+  "info": $color-info,
+  "warning": $color-warning,
+  "disabled": $color-disabled,
+  // Themes
+  "primary": $primary,
+  "secondary": $secondary,
+  "dark": $dark,
+  "light": $light,
+  // mapping old variables
+  // these variables are going to be deprecated.
+  "grey-35": $bizz-grey-40,
+  "grey-50": $bizz-grey-40,
+  "grey-65": $bizz-grey-60,
+  "grey-85": $bizz-grey-90,
+  "bizz-red": $bizz-red,
+) !default;
+
+// A map containing the variations of a specific theme
+$theme-colors: (
+  "primary": (
+    "base": $primary,
+    "contrast": $primary-contrast,
+  ),
+  "secondary": (
+    "base": $secondary,
+    "contrast": $secondary-contrast,
+  ),
+  "dark": (
+    "base": $dark,
+    "contrast": $dark-contrast,
+  ),
+  "light": (
+    "base": $light,
+    "contrast": $light-contrast,
+  ),
+) !default;
+
+// Dims the color to the next darker variable in the color system.
+// --> Make use of the dim function.
+$colors-dim: (
+  $bizz-red: $bizz-red-dark,
+  $bizz-grey-5: $black,
+  $bizz-grey-10: $bizz-grey-5,
+  $bizz-grey-20: $bizz-grey-10,
+  $bizz-grey-40: $bizz-grey-20,
+  $bizz-grey-60: $bizz-grey-40,
+  $bizz-grey-80: $bizz-grey-60,
+  $bizz-grey-90: $bizz-grey-80,
+  $bizz-grey-95: $bizz-grey-90,
+  $white: $bizz-grey-95,
+) !default;
+
+// Diminishes the color to the next lighter variable in the color system.
+// --> Make use of the diminish function.
+$colors-diminish: (
+  $bizz-red: $bizz-red-light,
+  $black: $bizz-grey-5,
+  $bizz-grey-5: $bizz-grey-10,
+  $bizz-grey-10: $bizz-grey-20,
+  $bizz-grey-20: $bizz-grey-40,
+  $bizz-grey-40: $bizz-grey-60,
+  $bizz-grey-60: $bizz-grey-80,
+  $bizz-grey-80: $bizz-grey-90,
+  $bizz-grey-90: $bizz-grey-95,
+  $bizz-grey-95: $white,
+  $white: $white,
+);
+
+// Lessens the intensity of the color variable according to the color system.
+// dark variables become lighter
+// light variables become darker
+// --> Make use of the lessen function.
+$colors-lessen: (
+  $bizz-red: $bizz-red-light,
+  $black: $bizz-grey-5,
+  $bizz-grey-5: $bizz-grey-10,
+  $bizz-grey-10: $bizz-grey-20,
+  $bizz-grey-20: $bizz-grey-40,
+  $bizz-grey-40: $bizz-grey-60,
+  // switch
+  $bizz-grey-60: $bizz-grey-40,
+  $bizz-grey-80: $bizz-grey-60,
+  $bizz-grey-90: $bizz-grey-80,
+  $bizz-grey-95: $bizz-grey-90,
+  $white: $bizz-grey-95,
+);
+
+// Intensifies the color variable according to the color system.
+// dark variables become darker
+// light variables become lighter
+// --> Make use of the intensify function.
+$colors-intensify: (
+  $bizz-red: $bizz-red-dark,
+  $black: $black,
+  $bizz-grey-5: $black,
+  $bizz-grey-10: $bizz-grey-5,
+  $bizz-grey-20: $bizz-grey-10,
+  $bizz-grey-40: $bizz-grey-20,
+  // middle
+  $bizz-grey-60: $bizz-grey-80,
+  $bizz-grey-80: $bizz-grey-90,
+  $bizz-grey-90: $bizz-grey-95,
+  $bizz-grey-95: $white,
+  $white: $white,
+);
+
+// Applied colors
+$body-color: $bizz-grey-20 !default;
+$headings-color: null !default;
+
+$link-color: $body-color !default;
+$link-color-hover: null !default;
+$external-link-icon-color: $bizz-red !default;
+
+// ==========================================
+// Fonts
+// ==========================================
+
+// Family
+$font-family-open-sans: "Open Sans", sans-serif !default;
+$font-family-font-awesome: "Font Awesome 5 Pro" !default;
+$font-family-font-awesome-brands: "Font Awesome 5 Brands" !default;
+
+$font-family-base: $font-family-open-sans !default;
+
+$headings-font-family: null !default;
+
+// Size
+$font-size-base: 1rem !default;
+$font-size-sm: $font-size-base * 0.875 !default;
+$font-size-lg: $font-size-base * 1.125 !default;
+$font-size-xl: $font-size-base * 1.25 !default;
+
+$font-size-map: (
+  "sm": $font-size-sm,
+  "base": $font-size-base,
+  "lg": $font-size-lg,
+  "xl": $font-size-xl
+) !default;
+
+$h1-font-size: $font-size-base * 1.5 !default;
+$h2-font-size: $font-size-base * 1.375 !default;
+$h3-font-size: $font-size-base * 1.125 !default;
+$h4-font-size: $font-size-base * 1.125 !default;
+
+$paragraph-xl-font-size: $font-size-xl !default;
+$blockquote-font-size: $font-size-xl !default;
+
+// Weights
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-semi-bold: 600 !default;
+$font-weight-bold: 700 !default;
+
+$font-weight-base: $font-weight-normal !default;
+
+$h1-font-weight: $font-weight-bold !default;
+$h2-font-weight: $font-weight-bold !default;
+$h3-font-weight: $font-weight-bold !default;
+$h4-font-weight: $font-weight-semi-bold !default;
+
+$paragraph-xl-font-weight: $font-weight-light !default;
+$blockquote-font-weight: $font-weight-light !default;
+
+// Line Height
+$line-height-base: 1.5 !default;
+
+$h1-line-height: 1.5 !default;
+$h2-line-height: 1.54 !default;
+$h3-line-height: 1.67 !default;
+$h4-line-height: 1.67 !default;
+
+// Decoration
+$link-decoration: underline !default;
+$link-decoration-hover: none !default;
+
+// Style
+$blockquote-font-style: italic !default;
+
+// ==========================================
+// Spacing
+// ==========================================
+// General spacing
+$spacing: 10px !default;
+$spacer: 1rem !default;
+$spacing-text: 1rem !default;
+
+$headings-margin-top: 0 !default;
+$headings-margin-bottom: $spacer !default;
+
+$paragraph-margin-top: 0 !default;
+$paragraph-margin-bottom: $spacer / 2 !default;
+
+$blockquote-margin: 0 0 $spacer !default;
+
+$link-icon-padding-right: $spacer / 2 !default;
+$link-icon-padding-left: $spacer / 4 !default;
+
+// ==========================================
+// Layout Settings
+// ==========================================
+
+// Breakpoints
+$breakpoint-xs: 0 !default;
+$breakpoint-sm: 600px !default;
+$breakpoint-md: 1024px !default;
+$breakpoint-lg: 1280px !default;
+$breakpoint-xl: 1440px !default;
+$breakpoint-xxl: 1920px !default;
+
+$breakpoints: (
+  xs: $breakpoint-xs,
+  sm: $breakpoint-sm,
+  md: $breakpoint-md,
+  lg: $breakpoint-lg,
+  xl: $breakpoint-xl,
+  xxl: $breakpoint-xxl
+) !default;
+
+$max-width-xs: null !default;
+$max-width-sm: 992px !default;
+$max-width-md: 1062px !default;
+$max-width-lg: 1200px !default;
+$max-width-xl: 1440px !default;
+
+$max-widths: (
+  xs: $max-width-xs,
+  sm: $max-width-sm,
+  md: $max-width-md,
+  lg: $max-width-lg,
+  xl: $max-width-xl
+) !default;
+
+// Transitions
+
+// Borders
+$border-radius-round: 999px !default;
+
+// Box Shadow
+
+// Z-Index
+$z-index-sticky: 1000 !default;
+$z-index-dialogs: $z-index-sticky + 10 !default;
+$z-index-notifications: $z-index-sticky + 20 !default;
+
+// ==========================================
+// Components
+// ==========================================
+// These variables should not be overwritten, because the styles of the components
+// are not customizable. They are intended to be informative, in order to build
+// layouts where these variables are relevant.
+
+$logo-svg-width: 8.75rem;
+$logo-svg-scale: 0.85;
+$logo-svg-transition: ($logo-svg-width - ($logo-svg-width * $logo-svg-scale)) / 2;
+
+// PageHeader
+$page-header-padding-y: 30px;
+$page-header-padding-condensed-y: 13px;
+$page-header-height-without-padding: 60px;
+$page-header-height: $page-header-height-without-padding  + ($page-header-padding-y * 2);
+$page-header-height-condensed-without-padding: 34px;
+$page-header-height-condensed: $page-header-height-condensed-without-padding + ($page-header-padding-condensed-y * 2);
+
+// ProjectTitle
+$project-title-height-condensed: $page-header-height-condensed-without-padding;
+$project-title-logo-margin-condensed: 1.875rem;
+$project-title-title-margin-condensed: 0.875rem;
+$project-title-font-size-condensed: 1.5rem;
+
+// Navbar
+$navbar-height: 50px;
+
+// List
+$list-indent-offset: spacing(1.5);
+
+// Buttons
+$button-border-radius: 0.3125em;
+
+// Message
+$message-box-shadow: 0 2px 4px 0 rgba($black, 0.5);
+
+// Modal
+$modal-header-font-size: $h1-font-size;
+$modal-border-separator: 1px solid $bizz-grey-90;
+$modal-content-padding: spacing(2);
+
+// Form
+$form-component-color-border: $bizz-grey-60;
+$form-component-color-border-hover: $bizz-grey-40;
+$form-component-color-border-disabled: $bizz-grey-80;
+
+$form-component-color-hover: $bizz-grey-95;
+$form-component-color-disabled: $color-disabled;
+
+$form-component-color-icon: $bizz-grey-60;
+$form-component-color-icon-hover: $bizz-grey-40;
+$form-component-color-icon-disabled: $bizz-grey-80;
+
+$form-component-color-text: $bizz-grey-20;
+$form-component-color-text-hover: $bizz-grey-10;
+$form-component-color-text-disabled: $bizz-grey-40;
+
+$form-component-color-placeholder: $bizz-grey-60;
+$form-component-color-placeholder-disabled: $bizz-grey-80;
+
+$form-component-size: 2.5em;
+$form-component-suffix-padding: spacing(1);
+
+$form-component-input-affix-size: 2.25em;
+$form-component-affix-font-size: 1em;
+
+// Tabs
+$tab-button-size: 3.125em;
+
+// Timeline
+$timeline-icon-size: 1em;
+$timeline-icon-wrapper-size: $timeline-icon-size + 0.2em;
+
+// Skeleton
+$skeleton-text-height: 20px;

@@ -1,0 +1,37 @@
+@import "@react-components-attempt/styles/dist/abstracts/variables";
+@import "@react-components-attempt/styles/dist/abstracts/functions";
+@import "@react-components-attempt/styles/dist/abstracts/mixins";
+
+$avatar-size: 2em;
+$avatar-background-color: $bizz-grey-65;
+$avatar-border-radius: $border-radius-round;
+$avatar-font-weight: $font-weight-semi-bold;
+$avatar-font-size: 0.834em;
+
+// Ensures that the components behave
+// consistently without relying on global styles.
+.avatar {
+  @include border-box;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: $avatar-size;
+  height: $avatar-size;
+  overflow: hidden;
+  border-radius: $avatar-border-radius;
+  background-color: $avatar-background-color;
+  font-size: $avatar-font-size;
+  font-weight: $avatar-font-weight;
+
+  // Add theme specific styles
+  @each $key, $value in $theme-colors {
+    $background: theme-color($key);
+    $color: theme-color($key, "contrast");
+
+    &--#{$key} {
+      background-color: $background;
+      color: $color;
+    }
+  }
+}

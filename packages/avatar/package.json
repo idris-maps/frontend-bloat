@@ -1,0 +1,19 @@
+{
+  "name": "@react-components-attempt/avatar",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc && cpx \"src/**/*\" dist"
+  },
+  "peerDependencies": {
+    "@types/react": "^17.0.3",
+    "react": "^17.0.1"
+  },
+  "dependencies": {
+    "@react-components-attempt/styles": "^0.0.0",
+    "@react-components-attempt/types": "^0.0.0",
+    "@types/classnames": "^2.2.11",
+    "classnames": "^2.2.6"
+  }
+}

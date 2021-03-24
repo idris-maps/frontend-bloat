@@ -1,0 +1,95 @@
+// stylelint-disable at-rule-disallowed-list, at-rule-no-unknown
+
+@import "../abstracts/variables";
+
+// Font Awesome are used for icons
+@import "../vendor/fontawesome/fontawesome.scss";
+
+// Derived from font-face and classes from:
+// ~@fortawesome/fontawesome-pro/scss/solid
+// ~@fortawesome/fontawesome-pro/scss/regular
+// ~@fortawesome/fontawesome-pro/scss/brands
+// ~@fortawesome/fontawesome-pro/scss/light
+// Supporting woff and woff2 should be enough (https://caniuse.com/#search=woff)
+@font-face {
+  font-family: $font-family-font-awesome;
+  font-style: normal;
+  font-weight: 900;
+  font-display: $fa-font-display;
+  src:
+    url("#{$fa-font-path}/fa-solid-900.woff2") format("woff2"),
+    url("#{$fa-font-path}/fa-solid-900.woff") format("woff");
+}
+
+@font-face {
+  font-family: $font-family-font-awesome;
+  font-style: normal;
+  font-weight: 400;
+  font-display: $fa-font-display;
+  src:
+    url("#{$fa-font-path}/fa-regular-400.woff2") format("woff2"),
+    url("#{$fa-font-path}/fa-regular-400.woff") format("woff");
+}
+
+@font-face {
+  font-family: $font-family-font-awesome-brands;
+  font-style: normal;
+  font-weight: 400;
+  font-display: $fa-font-display;
+  src:
+    url("#{$fa-font-path}/fa-brands-400.woff2") format("woff2"),
+    url("#{$fa-font-path}/fa-brands-400.woff") format("woff");
+}
+
+@font-face {
+  font-family: $font-family-font-awesome;
+  font-style: normal;
+  font-weight: 300;
+  font-display: $fa-font-display;
+  src:
+    url("#{$fa-font-path}/fa-light-300.woff2") format("woff2"),
+    url("#{$fa-font-path}/fa-light-300.woff") format("woff");
+}
+
+.fa,
+.fas {
+  font-family: $font-family-font-awesome;
+  font-weight: 900;
+}
+
+.fab {
+  font-family: $font-family-font-awesome-brands;
+}
+
+.far {
+  font-family: $font-family-font-awesome;
+  font-weight: 400;
+}
+
+.fal {
+  font-family: $font-family-font-awesome;
+  font-weight: 300;
+}
+
+// Hyperlinks
+.external-link {
+  &::before {
+    content: fa-content($fa-var-external-link-alt);
+    padding-right: $link-icon-padding-right;
+    color: $external-link-icon-color;
+
+    @extend %fa-icon;
+    @extend .fas;
+  }
+}
+
+.external-link-inline {
+  &::after {
+    content: fa-content($fa-var-external-link-alt);
+    padding-left: $link-icon-padding-left;
+    color: $external-link-icon-color;
+
+    @extend %fa-icon;
+    @extend .fas;
+  }
+}
