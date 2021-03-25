@@ -1,11 +1,12 @@
 {
   "name": "react-components-attempt",
   "scripts": {
-    "build": "lerna run build",
+    "build": "lerna run build --parallel",
     "test": "lerna run test",
     "lint:sass": "stylelint \"packages/**/src/**/*.scss\"",
     "lint:sass:fix": "stylelint \"packages/**/src/**/*.scss\" --fix",
-    "lint:ts": "eslint -c .eslintrc.js **/*.tsx"
+    "lint:ts": "eslint -c .eslintrc.js **/*.tsx",
+    "lint:ts:fix": "eslint -c .eslintrc.js **/*.tsx"
   },
   "devDependencies": {
     "@types/enzyme": "^3.10.8",
